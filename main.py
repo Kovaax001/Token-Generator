@@ -16,10 +16,13 @@ while process:
             print("Vous n'avez pas de clés générées.")
         continue
     elif request == '3':
-        print("Quel clé souhaitez vous supprimer ?")
-        fonctions.afficher_keys(key_manager.keys)
-        fonctions.suppr_key(int(input()))
-        print("La clé a bien été supprimée")
+        if key_manager.keys:
+            print("Quel clé souhaitez vous supprimer ?")
+            fonctions.afficher_keys(key_manager.keys)
+            fonctions.suppr_key(int(input()))
+            print("La clé a bien été supprimée")
+        elif not key_manager.keys:
+            print("Aucune clé n'est enregistré. ")
         continue
     elif request == '4':
         print("Merci d'avoir utilisé nos services")
